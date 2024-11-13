@@ -1,5 +1,11 @@
-<x-site-layout title="super BCN blog">
+<x-site-layout title="My First Laravel App">
 
-    Hello class
+    @foreach ($articles as $article)
+        <div>
+            <h2>{{ $article->title }}</h2>
+            <p>{{ $article->content }}</p>
+        </div>
+        
+    @endforeach
 
 </x-site-layout>
