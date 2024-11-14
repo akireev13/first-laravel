@@ -4,8 +4,14 @@
         <div class="mt-4">
             <h2 class="font-bold text-lg">{{ $article->title }}</h2>
             <p>{{ $article->content }}</p>
-            <p class="text-sm text-slate-700">Published at: {{ $article->published_at }}</p>
-            <p class="text-sm text-slate-700">Author: {{ $article->author->name }}</p>
+            {{-- format date for published at ->format('M d') --}}
+            <p class="text-sm text-slate-700">{{ $article->author?->name ?? 'Unknown' }} | {{ $article->published_at }}</p>
+            <h3 class="mt-2">Comments</h3>
+            <ul>
+                @foreach ($article->comments as $comment)
+                    <li>{{ $comment->content }}</li>
+                @endforeach
+            </ul>
         </div>
         
     @endforeach
