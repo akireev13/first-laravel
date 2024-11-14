@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    // relationships====+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     function author() {
-        return $this->belongsTo(Author::class, "author_id");
+        return $this->belongsTo(User::class, "author_id");
     }
 
 

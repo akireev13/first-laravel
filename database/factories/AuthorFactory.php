@@ -19,6 +19,7 @@ class AuthorFactory extends Factory
         return [
             "name" => fake()->name(),
             "email"=> fake()->email(),
+            "author_id" => fake()->numberBetween(1,10),
         ];
     }
 }
